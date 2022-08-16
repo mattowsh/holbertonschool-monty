@@ -3,7 +3,7 @@ The **interpeter for Monty ByteCodes files project** is a project of Foundations
 
 The objetive is **create an interpreter for Monty ByteCodes files** using C programming language.
 
-The authors are Santiago Fernández and Belén Matto.  
+The authors are Santiago "Toti" Fernández and Belén Matto.  
 Holberton School, 2022.  
 
 ## The Monty language
@@ -33,7 +33,7 @@ MUST FIX AT THE END
 ## Flowchart
 
 ## Authors
-[Santiago "Toti" Fernández](UPDATE LINKEDIN)  
+[Santiago "Toti" Fernández](https://www.linkedin.com/in/santiago-fern%C3%A1ndez-801641230/)  
 [Belén Matto](https://www.linkedin.com/in/mattobelen/) 
 
 Montevideo, Uruguay.
