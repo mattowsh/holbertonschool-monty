@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <sys/stat.h> /* to use stat */
 #include <fcntl.h> /* to use open */
+#include <unistd.h> /* to use write and print error messages */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
