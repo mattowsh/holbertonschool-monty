@@ -1,5 +1,5 @@
-#ifndef STACKS_H
-#define STACKS_H
+#ifndef MONTY_H
+#define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h> /* to use stat */
