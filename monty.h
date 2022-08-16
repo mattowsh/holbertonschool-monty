@@ -38,4 +38,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* functions */
+int openfile(char *filename);
+
 #endif
