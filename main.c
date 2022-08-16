@@ -10,11 +10,16 @@
 
 int main(int ac, char **av)
 {
+	char *result;
+
 	if (ac != 2)
 	{
 		write(STDERR_FILENO,"USAGE: monty file\n", 19);
 		exit(EXIT_FAILURE); /* return a int always != 0 */
 	}
 
-	openfile(av[1]);
+	result = openfile(av[1]);
+	
+
+	return (0);
 }
