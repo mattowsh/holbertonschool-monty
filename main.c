@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	char *result;
+	char *result, **token;
 
 	if (ac != 2)
 	{
@@ -19,7 +19,8 @@ int main(int ac, char **av)
 	}
 
 	result = openfile(av[1]);
-	
+	token = set_strtok(result);
+
 
 	return (0);
 }
