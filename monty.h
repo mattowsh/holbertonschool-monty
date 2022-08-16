@@ -1,5 +1,5 @@
-#ifndef STACKS
-#define STACKS
+#ifndef STACKS_H
+#define STACKS_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h> /* to use stat */
