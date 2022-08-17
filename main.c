@@ -1,7 +1,5 @@
 #include "monty.h"
 
-/* possible global variable? check... */
-
 /* main.c - Coordinates the execution of opcodes
  * using our interpreter for Monty ByteCodes files
  *
