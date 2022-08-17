@@ -5,7 +5,7 @@
 * @str: opcode found
 */
 
-void (*get_opcode(char *str))(stack_t **, unsigned int)
+void (*get_opcode(char *str, int counterline))(stack_t **, unsigned int)
 {
 /*	instruction_t ins[] = {
 		{"push", _push},
@@ -27,16 +27,16 @@ void (*get_opcode(char *str))(stack_t **, unsigned int)
 	{
 		while (ins[i].opcode)
 		{
-			if (strcmp(str_tokenized, ins[i].opcode) == 0)
+			if (strcmp(str_tokenized, ins[i].opcode) != 0)
 			{
-				if (strcmp(str_tokenized, "push") == 0)
-					// fijarse si next token es numero
-					// si no encontro numero, tire mensaje error
-					// cambiar valor de variable global
-				ins[i].f();
-				i++;
+				dprinf(STDERR_FILENO,"L<%i>: unknown instruction <%s>\n", counterline, str);
+				exit(EXIT_FAILURE);
+			}
+			else /* strcmp == 0 */
+			{
+				
+			}
 		}
-
 		str_tokenized = strtok(NULL, " \t");
 	}
 	return (0);
