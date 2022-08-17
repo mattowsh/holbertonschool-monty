@@ -10,7 +10,10 @@
 
 int main(int ac, char **av)
 {
+	int i = 0, counterline = 1;
 	char *result, **token;
+
+	(void) av;
 
 	if (ac != 2)
 	{
@@ -22,6 +25,12 @@ int main(int ac, char **av)
 	token = set_strtok(result);
 
 	while (token[i])
+	{
+		// variable global dato de counterline
+		get_opcode(token[i]);
+		counterline++;
+		i++;
+	}
 	// le paso cada token a mi funcion con la estructura
 	// strtok de esa linea con \t y espacios
 	// detecto si alguno de estos nuevos tokens estan en la estruct

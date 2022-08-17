@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * set_strtok - Tokenizes a string based in separators:
