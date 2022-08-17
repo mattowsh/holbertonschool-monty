@@ -7,6 +7,7 @@
 #include <sys/stat.h> /* to use stat */
 #include <fcntl.h> /* to use open */
 #include <unistd.h> /* to use write and print error messages */
+extern int global_variable;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -43,6 +44,6 @@ typedef struct instruction_s
 /* functions */
 char *openfile(char *filename);
 char **set_strtok(char *input);
-void (*get_opcode(char *str))(stack_t **, unsigned int);
+void (*get_opcode(char *str, int counterline))(stack_t **, unsigned int);
 
 #endif
