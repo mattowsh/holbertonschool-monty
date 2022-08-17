@@ -18,7 +18,7 @@ char **set_strtok(char *input)
 
 	while (input[i])
 	{
-		if (((input[i + 1]) == '\n') && ((input[i])) != '\n'))
+		if ((input[i + 1] == '\n') && (input[i] != '\n'))
 			counter++;
 		i++;
 	}
@@ -29,9 +29,9 @@ char **set_strtok(char *input)
 	for (i = 0; (i < counter) && input[j]; i++)
 	{
 		letters = 0;
-		while (separators(input[j]) == 1)
+		while (input[j] == '\n')
 			j++;
-		while (separators(input[j]) != 1)
+		while (input[j] != '\n')
 			letters++, j++;
 
 		result[i] = malloc(letters + 1);

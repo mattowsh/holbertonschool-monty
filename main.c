@@ -21,6 +21,13 @@ int main(int ac, char **av)
 	result = openfile(av[1]);
 	token = set_strtok(result);
 
+	while (token[i])
+	// le paso cada token a mi funcion con la estructura
+	// strtok de esa linea con \t y espacios
+	// detecto si alguno de estos nuevos tokens estan en la estruct
+	// puedo usar variable global para guardar el dato numerico luego de push
+
+
 
 	return (0);
 }
