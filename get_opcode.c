@@ -29,7 +29,7 @@ void (*get_opcode(char *str, int counterline))(stack_t **, unsigned int)
 		{
 			if (strcmp(str_tokenized, ins[i].opcode) != 0)
 			{
-				dprinf(STDERR_FILENO,"L<%i>: unknown instruction <%s>\n", counterline, str);
+				dprinf(STDERR_FILENO,"L<%i>: unknown instruction <%s>\n", counterline, str_tokenized);
 				exit(EXIT_FAILURE);
 			}
 			else /* strcmp == 0 */
