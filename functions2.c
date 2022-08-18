@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /*
  * _swap - Swaps the top two elements of the stack 
@@ -54,7 +54,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 void _add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0, counter = 0;
-	stack_t *h = *stack, *sig == NULL;
+	stack_t *h = *stack, *sig = NULL;
 
 	if (!h)
 		exit(EXIT_FAILURE);

@@ -8,7 +8,8 @@
 
 int main(int ac, char **av)
 {
-	int i = 0, counterline = 1;
+	int i = 0
+	unsigned int counterline = 1;
 	char *result, **token;
 	stack_t *stack_h = NULL;
 	void (*opcode)(stack_t **stack, unsigned int line_number);

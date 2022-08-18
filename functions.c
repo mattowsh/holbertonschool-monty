@@ -5,7 +5,7 @@
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pall(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void _pall(stack_t **stack, unsigned int line_number)
 {
 	int count = 0;
 	stack_t *h = *stack;
@@ -24,7 +24,7 @@ void _pall(stack_t **stack, unsigned int __attribute__((unused))line_number)
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pint(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h = *stack;
 
@@ -37,7 +37,7 @@ void _pint(stack_t **stack, unsigned int __attribute__((unused))line_number)
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pop(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h = *stack;
 
@@ -46,7 +46,7 @@ void _pop(stack_t **stack, unsigned int __attribute__((unused))line_number)
 	free(h);
 }
 
-void _push(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *newnode;
 	char *n;
