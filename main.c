@@ -35,5 +35,7 @@ int main(int ac, char **av)
 		counterline++;
 		i++;
 	}
+
+	free_dlistint(stack_h);
 	return (0);
 }
