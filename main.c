@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	int i = 0, flag = 0;
+	int i = 0;
 	unsigned int counterline = 1;
 	char *result, **token;
 	stack_t *stack_h = NULL;
@@ -35,6 +35,5 @@ int main(int ac, char **av)
 		counterline++;
 		i++;
 	}
-	free_dlistint(stack_h);
 	return (0);
 }
