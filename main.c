@@ -29,14 +29,12 @@ int main(int ac, char **av)
 
 	while (token[i])
 	{
-		counterline++;
+		// variable global dato de counterline
 		opcode = get_opcode(token[i], counterline);
 		opcode(&stack_h, counterline);
+		counterline++;
 		i++;
 	}
-
-
 	free_dlistint(stack_h);
-
 	return (0);
 }

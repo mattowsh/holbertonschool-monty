@@ -67,7 +67,7 @@ void _add(stack_t **stack, unsigned int line_number)
 		
 	if (counter < 2)
 	{
-		dprintf(STDERR_FILENO, "L%i: can't add, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't add, stack too short", line_number);
 		exit(EXIT_FAILURE);
 	}
 

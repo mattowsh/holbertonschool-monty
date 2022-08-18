@@ -5,7 +5,7 @@
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int __attribute__((unused))line_number)
 {
 	int count = 0;
 	stack_t *h = *stack;
@@ -24,7 +24,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pint(stack_t **stack, unsigned int line_number)
+void _pint(stack_t **stack, unsigned int __attribute__((unused))line_number)
 {
 	stack_t *h = *stack;
 
@@ -37,7 +37,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pop(stack_t **stack, unsigned int line_number)
+void _pop(stack_t **stack, unsigned int __attribute__((unused))line_number)
 {
 	stack_t *h = *stack;
 
@@ -46,13 +46,27 @@ void _pop(stack_t **stack, unsigned int line_number)
 	free(h);
 }
 
+/**
+* _push - pushes an element to the stack
+* @stack: double linked list
+* @line_number: line number of the .m file
+*/
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *newnode;
 	char *n;
+	int num = 0;
 
 	n = strtok(NULL, " \t");
+	num = verify_digit(n);
+	if (num == 0)
+	{
+		dprintf(STDERR_FILENO,"L%d: usage: push integer\n",line_number);
+		exit(EXIT_FAILURE);
+	}
 	newnode = malloc(sizeof(stack_t));
+	if(!newnode)
+		exit(EXIT_FAILURE);
 
 	if (!(*stack))
 	{
@@ -68,4 +82,28 @@ void _push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = newnode;
 	}
 	*stack = newnode;
+}
+
+/**
+* verify_digit - verifies if the string
+* is a number
+* @num: string to verify
+* Return: 1 if it's a number,
+* otherwise return 0
+*/
+int verify_digit(char *num)
+{
+	int i = 1;
+
+	if(!num)
+		return (0);
+	if((num[0] < '0' || num[0] > '9') && num[0] != '-')
+		return (0);
+	while(num[i])
+	{
+		if(num[i] < 48 || num[i] > 57)
+			return (0);
+		i++;
+	}
+	return (1);
 }
