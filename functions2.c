@@ -8,7 +8,7 @@
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	int counter = 0;
-	stack_t *h, *current, *nextcurrent;
+	stack_t *h = *stack, *current, *nextcurrent;
 
 	if (!h)
 		exit(EXIT_FAILURE);
@@ -22,11 +22,10 @@ void _swap(stack_t **stack, unsigned int line_number)
 		
 	if (counter < 2)
 	{
-		dprintf(STDERR_FILENO, "L<line_number>: can't swap, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%i: can't swap, stack too short", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	h = *stack;
 	current = h->next;
 	if (counter == 2)
 	{
@@ -68,7 +67,7 @@ void _add(stack_t **stack, unsigned int line_number)
 		
 	if (counter < 2)
 	{
-		dprintf(STDERR_FILENO, "L<line_number>: can't add, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%i: can't add, stack too short", line_number);
 		exit(EXIT_FAILURE);
 	}
 
