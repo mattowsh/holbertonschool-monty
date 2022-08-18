@@ -2,13 +2,15 @@
 
 /* main.c - Coordinates the execution of opcodes
  * using our interpreter for Monty ByteCodes files
+ * ac : argument count
+ * av : list of arguments
  *
- * Return:
+ * Return: 0 in success, EXIT_FAILURE value otherwise
  */
 
 int main(int ac, char **av)
 {
-	int i = 0
+	int i = 0, flag = 0;
 	unsigned int counterline = 1;
 	char *result, **token;
 	stack_t *stack_h = NULL;
@@ -27,19 +29,14 @@ int main(int ac, char **av)
 
 	while (token[i])
 	{
-		// variable global dato de counterline
 		counterline++;
 		opcode = get_opcode(token[i], counterline);
 		opcode(&stack_h, counterline);
 		i++;
 	}
 
-	// le paso cada token a mi funcion con la estructura
-	// strtok de esa linea con \t y espacios
-	// detecto si alguno de estos nuevos tokens estan en la estruct
-	// puedo usar variable global para guardar el dato numerico luego de push
 
-
+	free_dlistint(stack_h);
 
 	return (0);
 }
