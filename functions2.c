@@ -52,20 +52,21 @@ void _add(stack_t **stack, unsigned int line_number)
     }
 
 	/* to count number of nodes */
-	while (!h->next)
+	while (h)
 	{
 		counter++;
 		h = h->next;
 	}
 
-	if (counter < 2)
+	if (counter == 1)
 	{
 		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
+	h = *stack;
 	/* sum the two elements */
-	sum += h->n;
+	sum = h->n;
 	h = h->next;
 	sum += h->n;
 	h->n = sum;
@@ -73,12 +74,10 @@ void _add(stack_t **stack, unsigned int line_number)
 	/* deletes the first node */
 	h = h->prev;
 	*stack = h->next;
-	sig = h->next;
+	sig = *stack;
 	free(h);
 	if (sig)
 		sig->prev = NULL;
-
-	printf("%i\n", sum);
 }
 
 /*
