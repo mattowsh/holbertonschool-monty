@@ -43,7 +43,7 @@ typedef struct instruction_s
 
 /* functions */
 char *openfile(char *filename);
-char **set_strtok(char *input);
+char **set_strtok(char *s, char *delimeter);
 void (*get_opcode(char *str, int counterline))(stack_t **, unsigned int);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
