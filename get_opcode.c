@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
 * get_opcode - get the opcode functions
-* 
 * @str: opcode found
+* @counterline: line of the .m file
+* Return: 0
 */
 
 void (*get_opcode(char *str,  int counterline))(stack_t **, unsigned int)
@@ -35,7 +36,7 @@ void (*get_opcode(char *str,  int counterline))(stack_t **, unsigned int)
 		}
 		i++;
 	}
-	dprintf(STDERR_FILENO,"L%i: unknown instruction %s\n", counterline, str);
+	dprintf(STDERR_FILENO, "L%i: unknown instruction %s\n", counterline, str);
 	exit(EXIT_FAILURE);
 	return (0);
 }

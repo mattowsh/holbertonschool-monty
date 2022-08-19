@@ -30,8 +30,8 @@ void _pint(stack_t **stack, unsigned int line_number)
 
 	if (!h)
 	{
-		dprintf(STDERR_FILENO,"L%d: can't pint, stack empty\n",line_number);
-        exit(EXIT_FAILURE);
+		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", h->n);
 }
@@ -47,7 +47,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 	if (!h)
 	{
-		dprintf(STDERR_FILENO,"L%d: can't pop an empty stack\n",line_number);
+		dprintf(STDERR_FILENO, "L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	*stack = h->next;
@@ -72,11 +72,11 @@ void _push(stack_t **stack, unsigned int line_number)
 	num = verify_digit(n);
 	if (num == 0)
 	{
-		dprintf(STDERR_FILENO,"L%d: usage: push integer\n",line_number);
+		dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	newnode = malloc(sizeof(stack_t));
-	if(!newnode)
+	if (!newnode)
 		exit(EXIT_FAILURE);
 
 	if (!(*stack))
@@ -106,13 +106,13 @@ int verify_digit(char *num)
 {
 	int i = 1;
 
-	if(!num)
+	if (!num)
 		return (0);
-	if((num[0] < '0' || num[0] > '9') && num[0] != '-')
+	if ((num[0] < '0' || num[0] > '9') && num[0] != '-')
 		return (0);
-	while(num[i])
+	while (num[i])
 	{
-		if(num[i] < 48 || num[i] > 57)
+		if (num[i] < 48 || num[i] > 57)
 			return (0);
 		i++;
 	}
