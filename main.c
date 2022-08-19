@@ -1,9 +1,10 @@
 #include "monty.h"
 
-/* main.c - Coordinates the execution of opcodes
+/**
+ * main - Coordinates the execution of opcodes
  * using our interpreter for Monty ByteCodes files
- * ac : argument count
- * av : list of arguments
+ * @ac : argument count
+ * @av : list of arguments
  *
  * Return: 0 in success, EXIT_FAILURE value otherwise
  */
@@ -20,7 +21,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		write(STDERR_FILENO,"USAGE: monty file\n", 18);
+		write(STDERR_FILENO, "USAGE: monty file\n", 18);
 		free_dlistint(stack_h);
 		exit(EXIT_FAILURE); /* return a int always != 0 */
 	}
@@ -29,7 +30,6 @@ int main(int ac, char **av)
 	token = set_strtok(result, '\n');
 	while (token[i])
 	{
-		// variable global dato de counterline
 		if (token[i][0])
 		{
 			opcode = get_opcode(token[i], counterline);

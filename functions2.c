@@ -1,7 +1,7 @@
 #include "monty.h"
 
-/*
- * _swap - Swaps the top two elements of the stack
+/**
+ * _swap - swaps the top two elements of the stack
  * @stack : double linked list
  * @line_number : line number of the .m file
  */
@@ -12,10 +12,11 @@ void _swap(stack_t **stack, unsigned int line_number)
 	stack_t *h = *stack, *current;
 
 	if (!h)
-	{	
+	{
 		dprintf(STDERR_FILENO, "L%i: can't swap, stack too short\n", line_number);
-        exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
+
 	/* to count number of nodes */
 	while (h)
 	{
@@ -34,9 +35,9 @@ void _swap(stack_t **stack, unsigned int line_number)
 	current->n = h->n;
 	h->n = tmp;
 }
-	
-/*
- * _add - Adds the top two elements of the stack
+
+/**
+ * _add - adds the top two elements of the stack
  * @stack : double linked list
  * @line_number : line number of the .m file
  */
@@ -45,11 +46,12 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0, counter = 0;
 	stack_t *h = *stack, *sig = NULL;
+
 	if (!h)
-    {
-        dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+	{
+		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	/* to count number of nodes */
 	while (h)
@@ -65,6 +67,7 @@ void _add(stack_t **stack, unsigned int line_number)
 	}
 
 	h = *stack;
+
 	/* sum the two elements */
 	sum = h->n;
 	h = h->next;
@@ -80,8 +83,8 @@ void _add(stack_t **stack, unsigned int line_number)
 		sig->prev = NULL;
 }
 
-/*
- * _nop - Doesn’t do anything
+/**
+ * _nop - doesn’t do anything
  * @stack : double linked list
  * @line_number : line number of the .m file
  */

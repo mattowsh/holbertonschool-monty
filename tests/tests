@@ -1,0 +1,13 @@
+#include "main.h"
+
+int main(void)
+{
+	char *b, *str;
+
+	b = "not.a.valid.command";
+	str = error(b);
+
+	printf(">>%s<<\n", str);
+
+	return (0);
+}

@@ -4,7 +4,8 @@
  * set_strtok - Tokenizes a string based in separators:
  * space, newline, tab or NULL character at the end of the string
  * @s: string to be tokenized
- * @delimiter: delimiters
+ * @delimeter: delimiters
+ *
  * Return: a pointer to an array tokenized
  */
 char **set_strtok(char *s, char delimeter)
@@ -17,7 +18,7 @@ char **set_strtok(char *s, char delimeter)
 
 	for (i = 0; s && s[i]; i++)
 	{
-		if ((s[i + 1] == delimeter))
+		if (s[i + 1] == delimeter)
 		{
 			length++;
 		}
