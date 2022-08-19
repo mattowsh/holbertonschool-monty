@@ -30,9 +30,9 @@ int main(int ac, char **av)
 	while (token[i])
 	{
 		// variable global dato de counterline
+		counterline++;
 		opcode = get_opcode(token[i], counterline);
 		opcode(&stack_h, counterline);
-		counterline++;
 		i++;
 	}
 
