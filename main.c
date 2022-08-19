@@ -25,13 +25,15 @@ int main(int ac, char **av)
 	}
 
 	result = openfile(av[1]);
-	token = set_strtok(result, "\n");
-
+	token = set_strtok(result, '\n');
 	while (token[i])
 	{
 		// variable global dato de counterline
-		opcode = get_opcode(token[i], counterline);
-		opcode(&stack_h, counterline);
+		if (token[i][0])
+		{
+			opcode = get_opcode(token[i], counterline);
+			opcode(&stack_h, counterline);
+		}
 		counterline++;
 		i++;
 	}

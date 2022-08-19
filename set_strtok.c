@@ -7,35 +7,46 @@
  * @delimiter: delimiters
  * Return: a pointer to an array tokenized
  */
-char **set_strtok(char *s, char *delimeter)
+char **set_strtok(char *s, char delimeter)
 {
 	char **args;
 	int i = 0;
+	int x = -1;
+	int index = 0;
 	int length = 0;
-	char *s_tmp;
-	char *token;
 
-	s_tmp = strdup(s);
-	token = strtok(s_tmp, delimeter);
-	for (length = 0; token; length++)
+	for (i = 0; s && s[i]; i++)
 	{
-		token = strtok(NULL, delimeter);
+		if ((s[i + 1] == delimeter))
+		{
+			length++;
+		}
 	}
-	free(s_tmp);
 	args = malloc(sizeof(char *) * (length + 1));
-	if (args == NULL)
+	for (i = 0; s && s[i]; i++)
 	{
-		return (NULL);
+		if ((s[i] != delimeter || s[i + 1] == delimeter))
+		{
+			if (x == -1)
+			{
+				for (length = 0, x = i; s[x] != delimeter; x++, length++)
+					;
+				x = 0;
+				args[index] = malloc(sizeof(char *) * length + 1);
+			}
+			if (s[i] != '\n')
+			{
+				args[index][x] = s[i];
+				x++;
+			}
+			if (s[i + 1] == delimeter)
+			{
+				args[index][x] = '\0';
+				x = -1;
+				index++;
+			}
+		}
 	}
-
-	s_tmp = strdup(s);
-	token = strtok(s_tmp, delimeter);
-	for (i = 0; token; i++)
-	{
-		args[i] = strdup(token);
-		token = strtok(NULL, delimeter);
-	}
-	args[i] = NULL;
-	free(s_tmp);
+	args[index] = NULL;
 	return (args);
 }
