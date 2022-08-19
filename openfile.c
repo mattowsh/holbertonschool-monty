@@ -10,7 +10,7 @@
 char *openfile(char *filename)
 {
 	ssize_t fd;
-	char *buffer = malloc(1024);
+	char *buffer = malloc(40000);
 
 	fd = open(filename, O_RDONLY);
 
@@ -21,7 +21,7 @@ char *openfile(char *filename)
 		exit(EXIT_FAILURE);
 	}
 	
-	read(fd, buffer, 1024);
+	read(fd, buffer, 40000);
 
 	return (buffer);
 }
