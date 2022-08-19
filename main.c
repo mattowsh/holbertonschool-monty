@@ -25,7 +25,7 @@ int main(int ac, char **av)
 	}
 
 	result = openfile(av[1]);
-	token = set_strtok(result);
+	token = set_strtok(result, "\n");
 
 	while (token[i])
 	{
@@ -35,7 +35,6 @@ int main(int ac, char **av)
 		counterline++;
 		i++;
 	}
-
 	free_dlistint(stack_h);
 	return (0);
 }
