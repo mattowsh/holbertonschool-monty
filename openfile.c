@@ -17,7 +17,7 @@ char *openfile(char *filename)
 	if (fd == -1)
 	{
 		free(buffer);
-		dprintf(STDERR_FILENO,"Error: Can't open file <%s>\n", filename);
+		dprintf(STDERR_FILENO,"Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 	
