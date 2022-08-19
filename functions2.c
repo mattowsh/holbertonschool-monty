@@ -1,10 +1,11 @@
 #include "monty.h"
 
 /*
- * _swap - Swaps the top two elements of the stack 
+ * _swap - Swaps the top two elements of the stack
  * @stack : double linked list
  * @line_number : line number of the .m file
  */
+
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	int counter = 0;
@@ -19,7 +20,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 		counter++;
 		h = h->next;
 	}
-		
+
 	if (counter < 2)
 	{
 		dprintf(STDERR_FILENO, "L%i: can't swap, stack too short", line_number);
@@ -50,6 +51,7 @@ void _swap(stack_t **stack, unsigned int line_number)
  * @stack : double linked list
  * @line_number : line number of the .m file
  */
+
 void _add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0, counter = 0;
@@ -64,7 +66,7 @@ void _add(stack_t **stack, unsigned int line_number)
 		counter++;
 		h = h->next;
 	}
-		
+
 	if (counter < 2)
 	{
 		dprintf(STDERR_FILENO, "L%d: can't add, stack too short", line_number);
@@ -87,11 +89,13 @@ void _add(stack_t **stack, unsigned int line_number)
 
 	printf("%i\n", sum);
 }
+
 /*
  * _nop - Doesn’t do anything
  * @stack : double linked list
  * @line_number : line number of the .m file
  */
+
 void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack, (void) line_number;
