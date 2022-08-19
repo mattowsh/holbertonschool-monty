@@ -11,10 +11,10 @@ void (*get_opcode(char *str,  int counterline))(stack_t **, unsigned int)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
-	//	{"pop", _pop},
-	//	{"swap", _swap},
-	//	{"add", _add},
-	//	{"nop", _nop},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
@@ -23,6 +23,10 @@ void (*get_opcode(char *str,  int counterline))(stack_t **, unsigned int)
 
 	str_tokenized = strtok(str, " \t");
 
+	if (!str_tokenized)
+	{
+		return (_nop);
+	}
 	while (ins[i].opcode)
 	{
 		if (strcmp(str_tokenized, ins[i].opcode) == 0)
