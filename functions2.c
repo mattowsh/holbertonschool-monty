@@ -12,8 +12,10 @@ void _swap(stack_t **stack, unsigned int line_number)
 	stack_t *h = *stack, *current, *nextcurrent;
 
 	if (!h)
-		exit(EXIT_FAILURE);
-
+	{	
+		dprintf(STDERR_FILENO, "L%i: can't swap, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+	}
 	/* to count number of nodes */
 	while (!h->next)
 	{
@@ -23,7 +25,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 
 	if (counter < 2)
 	{
-		dprintf(STDERR_FILENO, "L%i: can't swap, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%i: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -56,9 +58,11 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0, counter = 0;
 	stack_t *h = *stack, *sig = NULL;
-
 	if (!h)
-		exit(EXIT_FAILURE);
+    {
+        dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+    }
 
 	/* to count number of nodes */
 	while (!h->next)
@@ -69,7 +73,7 @@ void _add(stack_t **stack, unsigned int line_number)
 
 	if (counter < 2)
 	{
-		dprintf(STDERR_FILENO, "L%d: can't add, stack too short", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 

@@ -24,11 +24,15 @@ void _pall(stack_t **stack, unsigned int __attribute__((unused))line_number)
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pint(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h = *stack;
 
-	// verificar si es numero antes de printear
+	if (!h)
+	{
+		dprintf(STDERR_FILENO,"L%d: can't pint, stack empty\n",line_number);
+        exit(EXIT_FAILURE);
+	}
 	printf("%d\n", h->n);
 }
 
@@ -37,10 +41,15 @@ void _pint(stack_t **stack, unsigned int __attribute__((unused))line_number)
 * @stack: double linked list
 * @line_number: line number of the .m file
 */
-void _pop(stack_t **stack, unsigned int __attribute__((unused))line_number)
+void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *h = *stack;
 
+	if (!h)
+	{
+		dprintf(STDERR_FILENO,"L%d: can't pop an empty stack\n",line_number);
+		exit(EXIT_FAILURE);
+	}
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	free(h);
