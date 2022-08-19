@@ -21,6 +21,7 @@ int main(int ac, char **av)
 	if (ac != 2)
 	{
 		write(STDERR_FILENO,"USAGE: monty file\n", 18);
+		free_dlistint(stack_h);
 		exit(EXIT_FAILURE); /* return a int always != 0 */
 	}
 
@@ -37,6 +38,8 @@ int main(int ac, char **av)
 		counterline++;
 		i++;
 	}
+	free_grid(token);
+	free(result);
 	free_dlistint(stack_h);
 	return (0);
 }

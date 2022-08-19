@@ -52,6 +52,7 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
+void free_grid(char **grid);
 int verify_digit(char *num);
 void free_dlistint(stack_t *head);
 

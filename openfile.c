@@ -12,6 +12,11 @@ char *openfile(char *filename)
 	ssize_t fd;
 	char *buffer = malloc(40000);
 
+	if (!buffer)
+	{
+		write(STDERR_FILENO,"Error: malloc failed\n", 21);
+		exit(EXIT_FAILURE);
+	}
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
@@ -23,5 +28,6 @@ char *openfile(char *filename)
 	
 	read(fd, buffer, 40000);
 
+	close(fd);
 	return (buffer);
 }
