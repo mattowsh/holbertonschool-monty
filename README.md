@@ -56,7 +56,7 @@ You can use the interpreter by typing:
 	./monty your_montybyte_code.m
 
 
-![usage_example](https://user-images.githubusercontent.com/103126719/185727685-f512e24c-8a08-4f59-8672-8a14fb6c479a.png)
+![usage_example](https://user-images.githubusercontent.com/103126719/185729230-225fa299-250f-4ea3-b60f-f99296f88f5c.png)
 
 
 ## Authors
