@@ -1,4 +1,4 @@
-# Interpreter for Monty ByteCodes files
+# <a  href="https://www.python.org/"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/800px-Python_logo_01.svg.png" alt="Python Language" width=7% heigth=7% ></img></a> Interpreter for Monty ByteCodes files
 The **interpeter for Monty ByteCodes files project** is a project of Foundations: second trimester, of the career Software Engineering at Holberton School.
 
 The objetive is **create an interpreter for Monty ByteCodes files** using C programming language.
@@ -53,8 +53,9 @@ Compile the files in the following way:
 
 You can use the interpreter by typing: **./monty** *your_montybyte_code.m*
 
+<div align="center">
 ![usage_example](https://user-images.githubusercontent.com/103126719/185727685-f512e24c-8a08-4f59-8672-8a14fb6c479a.png)
-
+</div>
 
 ## Authors
 [Santiago "Toti" Fernández](https://www.linkedin.com/in/santiago-fern%C3%A1ndez-801641230/)  
