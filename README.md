@@ -51,9 +51,10 @@ Compile the files in the following way:
 
     gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o monty
 
-You can use the interpreter by typing: ** ./monty *your_montybyte_code.m* **
+You can use the interpreter by typing: **./monty** *your_montybyte_code.m*
 
-![usage_example](https://user-images.githubusercontent.com/103126719/185727590-16df4be8-da99-4eb6-9cb9-008e1d15a3bf.png)
+![usage_example](https://user-images.githubusercontent.com/103126719/185727685-f512e24c-8a08-4f59-8672-8a14fb6c479a.png)
+
 
 ## Authors
 [Santiago "Toti" Fernández](https://www.linkedin.com/in/santiago-fern%C3%A1ndez-801641230/)  
