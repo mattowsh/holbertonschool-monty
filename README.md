@@ -37,6 +37,11 @@ There is not more than one instruction per line. There can be any number of spac
 	- *_swap*: Swaps the top two elements of the stack
 	- *_add*: Adds the top two elements of the stack
 	- *_nop*: Does not do anything
+- **`advanced_functions.c`** : Contains the opcode functions:
+	- *_sub*: Subtracts the top element of the stack from the second top element of the stack
+	- *_div*: Divides the second top element of the stack by the top element of the stack 
+	- *_mul*: Multiplies the second top element of the stack with the top element of the stack
+	- *_mod*: Computes the rest of the division of the second top element of the stack by the top element of the stack
 - **`free_grid.c`** : Frees a 2 dimensional grid
 - **`free_dlist.c`** : Frees a stack_t double linked list
 
