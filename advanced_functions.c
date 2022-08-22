@@ -70,20 +70,21 @@ void _div(stack_t **stack, unsigned int line_number)
 
 	/* to count number of nodes */
 	while (h)
-	{
-		counter++;
-		h = h->next;
-	}
+		counter++, h = h->next;
 
 	if (counter == 1)
 	{
 		dprintf(STDERR_FILENO, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	h = *stack;
 
 	/* divides the two elements */
+	if (h->n == 0)
+	{
+		dprintf(STDERR_FILENO, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	h = h->next;
 	div = h->n;
 	h = h->prev;
