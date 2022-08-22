@@ -125,7 +125,7 @@ void _mul(stack_t **stack, unsigned int line_number)
 
 	if (counter == 1)
 	{
-		dprintf(STDERR_FILENO, "L%d: can't sub, stack too short\n", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
