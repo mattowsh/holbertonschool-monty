@@ -145,3 +145,50 @@ void _mul(stack_t **stack, unsigned int line_number)
 	if (sig)
 		sig->prev = NULL;
 }
+
+/**
+ * _mod - Computes the rest of the division of the second top element of the
+ * stack by the top element of the stack
+ * @stack : double linked list
+ * @line_number : line number of the .m file
+ */
+
+void _mod(stack_t **stack, unsigned int line_number)
+{
+	int counter = 0;
+	stack_t *h = *stack, *sig = NULL;
+
+	if (!h)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	/* to count number of nodes */
+	while (h)
+		counter++, h = h->next;
+
+	if (counter == 1)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	h = *stack;
+
+	/* calculates module */
+	if (h->n == 0)
+	{
+		dprintf(STDERR_FILENO, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	h = h->next;
+	h->n = h->n % (*stack)->n;
+
+	/* deletes the first node */
+	h = h->prev;
+	*stack = h->next;
+	sig = *stack;
+	free(h);
+	if (sig)
+		sig->prev = NULL;
+}
