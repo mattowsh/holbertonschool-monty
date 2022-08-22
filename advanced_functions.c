@@ -35,7 +35,7 @@ void _sub(stack_t **stack, unsigned int line_number)
 	sub = h->n;
 	h = h->next;
 	sub -= h->n;
-	h->n = sum;
+	h->n = sub;
 
 	/* deletes the first node */
 	h = h->prev;
