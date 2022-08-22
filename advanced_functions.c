@@ -3,6 +3,8 @@
 /**
  * _sub - Subtracts the top element of the stack from the
  * second top element of the stack
+ * @stack : double linked list
+ * @line_number : line number of the .m file
  */
 
 void _sub(stack_t **stack, unsigned int line_number)
@@ -32,9 +34,11 @@ void _sub(stack_t **stack, unsigned int line_number)
 	h = *stack;
 
 	/* sub the two elements */
-	sub = h->n;
 	h = h->next;
+	sub = h->n;
+	h = h->prev;
 	sub -= h->n;
+	h = h->next;
 	h->n = sub;
 
 	/* deletes the first node */
