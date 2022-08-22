@@ -101,21 +101,47 @@ void _div(stack_t **stack, unsigned int line_number)
 		sig->prev = NULL;
 }
 
+/**
+ * _mul - Multiplies the second top element of the stack with the
+ * top element of the stack
+ * @stack : double linked list
+ * @line_number : line number of the .m file
+ */
 
+void _mul(stack_t **stack, unsigned int line_number)
+{
+	int mul = 0, counter = 0;
+	stack_t *h = *stack, *sig = NULL;
 
+	if (!h)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
+	/* to count number of nodes */
+	while (h)
+		counter++, h = h->next;
 
+	if (counter == 1)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
+	h = *stack;
 
+	/* mul the two elements */
+	mul = h->n;
+	h = h->next;
+	mul *= h->n;
+	h->n = mul;
 
-
-
-
-
-
-
-
-
-
-
-
+	/* deletes the first node */
+	h = h->prev;
+	*stack = h->next;
+	sig = *stack;
+	free(h);
+	if (sig)
+		sig->prev = NULL;
+}
